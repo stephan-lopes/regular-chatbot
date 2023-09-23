@@ -48,9 +48,5 @@ export function getURL(userInput) {
  * @returns {string} Greeting from the chatbot
  */
 export function niceToMeetYou(fullName) {
-  const splitFullName = fullName.split(/,\s*/);
-
-  return "Nice to meet you, name lastName"
-    .replace(/name/, splitFullName[1])
-    .replace(/lastName/,splitFullName[0]);
+  return "Nice to meet you, " + fullName.replace(/([a-z]+),\s*([a-z]+)/i, '$2 $1')
 }
